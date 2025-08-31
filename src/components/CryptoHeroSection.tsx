@@ -45,16 +45,16 @@ const CryptoHeroSection = () => {
               <span className="text-sm text-muted-foreground">🇨🇦 Built for Canadian Crypto Investors</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
-              Canadian Crypto &
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
+              Canada Crypto & ETF Tools —
               <span className="bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent"> 
-                {' '}ETF Hub
+                {' '}Tax, Fees, and ETF Comparisons
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 text-balance">
               Track Wealthsimple crypto prices in CAD, calculate your CRA taxes, 
-              compare ETFs, and get expert Canadian investing guides.
+              compare ETFs, and get expert Canadian investing guides — all free.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -68,10 +68,10 @@ const CryptoHeroSection = () => {
               </Button>
             </div>
 
-            {/* Newsletter Signup */}
+            {/* Newsletter Signup with Lead Magnet */}
             <div className="max-w-md mx-auto">
               <p className="text-sm text-muted-foreground mb-3">
-                Join 5,000+ Canadian crypto investors
+                <strong>Free RRSP/TFSA Crypto Guide PDF</strong> + weekly insights for 5,000+ Canadian investors
               </p>
               <div className="flex gap-2">
                 <Input
@@ -81,9 +81,12 @@ const CryptoHeroSection = () => {
                   className="flex-1"
                 />
                 <Button onClick={handleNewsletterSignup}>
-                  Subscribe Free
+                  Get Free Guide
                 </Button>
               </div>
+              <p className="text-xs text-muted-foreground mt-2">
+                No spam. Unsubscribe anytime.
+              </p>
             </div>
           </div>
 
