@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -17,6 +17,8 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { blogPosts } from '@/data/blogPosts';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -25,8 +27,7 @@ const BlogPost = () => {
   const post = blogPosts.find(p => p.slug === slug);
   
   if (!post) {
-    navigate('/blog');
-    return null;
+    return <Navigate to="/blog" replace />;
   }
 
   const relatedPosts = blogPosts
@@ -85,6 +86,7 @@ const BlogPost = () => {
           {JSON.stringify(generateJsonLd())}
         </script>
       </Helmet>
+      <Header />
 
       <div className="min-h-screen bg-background text-foreground">
         <div className="container mx-auto px-4 py-8">
@@ -246,6 +248,7 @@ const BlogPost = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

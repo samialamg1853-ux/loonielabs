@@ -6,12 +6,14 @@ import { Menu, X, Calculator, TrendingUp, FileText, Sun, Moon } from 'lucide-rea
 import { cn } from '@/lib/utils';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { Switch } from '@/components/ui/switch';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [activePage, setActivePage] = useState('tools');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false); // Default to light mode
-  
   useEffect(() => {
     // Apply the theme to the document when it changes
     if (isDarkMode) {
@@ -23,22 +25,37 @@ const Header = () => {
     }
   }, [isDarkMode]);
   
+  useEffect(() => {
+    const path = location.pathname;
+    if (path.startsWith('/tools')) {
+      setActivePage('tools');
+    } else if (path.startsWith('/crypto')) {
+      setActivePage('crypto');
+    } else if (path.startsWith('/blog')) {
+      setActivePage('blog');
+    } else {
+      setActivePage('');
+    }
+  }, [location.pathname]);
+  
   const handleNavClick = (page: string) => (e: React.MouseEvent) => {
     e.preventDefault();
     setActivePage(page);
     
     // Handle navigation to different pages
     if (page === 'tools') {
-      window.location.href = '/tools/tax-calculator';
+      navigate('/tools/tax-calculator');
     } else if (page === 'crypto') {
-      window.location.href = '/crypto';
+      navigate('/crypto');
     } else if (page === 'blog') {
-      window.location.href = '/blog';
+      navigate('/blog');
     } else {
-      // For homepage sections, scroll to element
+      // For homepage sections, scroll to element or go home
       const element = document.getElementById(page);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/');
       }
     }
     setMobileMenuOpen(false);

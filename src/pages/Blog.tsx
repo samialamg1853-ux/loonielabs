@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Calendar, User, ArrowRight, Search, MapPin } from 'lucide-react';
 import { blogPosts } from '@/data/blogPosts';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -104,6 +106,7 @@ const Blog = () => {
           {JSON.stringify(generateBreadcrumbJsonLd())}
         </script>
       </Helmet>
+      <Header />
 
       <div className="min-h-screen bg-background text-foreground">
         <div className="container mx-auto px-4 py-12">
@@ -286,6 +289,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
