@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import CryptoExplorer from "./pages/CryptoExplorer";
 import TaxCalculator from "./pages/TaxCalculator";
 import ETFComparison from "./pages/ETFComparison";
+import PortfolioOptimizer from "./pages/PortfolioOptimizer";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/crypto" element={<CryptoExplorer />} />
           <Route path="/tools/tax-calculator" element={<TaxCalculator />} />
           <Route path="/tools/etf-vs-btc" element={<ETFComparison />} />
+          <Route path="/tools/portfolio-optimizer" element={<PortfolioOptimizer />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
