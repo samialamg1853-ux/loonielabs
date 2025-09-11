@@ -44,11 +44,13 @@ const Header = () => {
     
     // Handle navigation to different pages
     if (page === 'tools') {
-      navigate('/tools/tax-calculator');
-    } else if (page === 'crypto') {
-      navigate('/crypto');
-    } else if (page === 'blog') {
-      navigate('/blog');
+      navigate('/tools/crypto-tax');
+    } else if (page === 'guides') {
+      navigate('/#guides');
+    } else if (page === 'etfs') {
+      navigate('/tools/etf-compare');
+    } else if (page === 'taxes') {
+      navigate('/tools/crypto-tax');
     } else {
       // For homepage sections, scroll to element or go home
       const element = document.getElementById(page);
@@ -99,24 +101,34 @@ const Header = () => {
                 <Calculator size={16} className="inline-block mr-1.5" /> Tools
               </ToggleGroupItem>
               <ToggleGroupItem 
-                value="crypto" 
+                value="guides" 
                 className={cn(
                   "px-4 py-2 rounded-full transition-colors relative",
-                  activePage === 'crypto' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  activePage === 'guides' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 )}
-                onClick={handleNavClick('crypto')}
+                onClick={handleNavClick('guides')}
               >
-                <TrendingUp size={16} className="inline-block mr-1.5" /> Crypto
+                <FileText size={16} className="inline-block mr-1.5" /> Guides
               </ToggleGroupItem>
               <ToggleGroupItem 
-                value="blog" 
+                value="etfs" 
                 className={cn(
                   "px-4 py-2 rounded-full transition-colors relative",
-                  activePage === 'blog' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  activePage === 'etfs' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 )}
-                onClick={handleNavClick('blog')}
+                onClick={handleNavClick('etfs')}
               >
-                <FileText size={16} className="inline-block mr-1.5" /> Blog
+                <TrendingUp size={16} className="inline-block mr-1.5" /> ETFs
+              </ToggleGroupItem>
+              <ToggleGroupItem 
+                value="taxes" 
+                className={cn(
+                  "px-4 py-2 rounded-full transition-colors relative",
+                  activePage === 'taxes' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                )}
+                onClick={handleNavClick('taxes')}
+              >
+                <Calculator size={16} className="inline-block mr-1.5" /> Taxes
               </ToggleGroupItem>
             </ToggleGroup>
           </div>
@@ -136,22 +148,31 @@ const Header = () => {
                 <Calculator size={16} className="inline-block mr-1.5" /> Tools
               </a>
               <a 
-                href="#crypto" 
+                href="#guides" 
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activePage === 'crypto' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  activePage === 'guides' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
-                onClick={handleNavClick('crypto')}
+                onClick={handleNavClick('guides')}
               >
-                <TrendingUp size={16} className="inline-block mr-1.5" /> Crypto
+                <FileText size={16} className="inline-block mr-1.5" /> Guides
               </a>
               <a 
-                href="#blog" 
+                href="#etfs" 
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activePage === 'blog' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  activePage === 'etfs' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
                 }`}
-                onClick={handleNavClick('blog')}
+                onClick={handleNavClick('etfs')}
               >
-                <FileText size={16} className="inline-block mr-1.5" /> Blog
+                <TrendingUp size={16} className="inline-block mr-1.5" /> ETFs
+              </a>
+              <a 
+                href="#taxes" 
+                className={`px-3 py-2 text-sm rounded-md transition-colors ${
+                  activePage === 'taxes' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                }`}
+                onClick={handleNavClick('taxes')}
+              >
+                <Calculator size={16} className="inline-block mr-1.5" /> Taxes
               </a>
               
               {/* Add theme toggle for mobile */}
@@ -183,6 +204,7 @@ const Header = () => {
             <Sun size={18} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
           </div>
           <div className="rounded-2xl">
+            <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-muted mr-2">Search</Button>
             <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-muted">Newsletter</Button>
           </div>
         </div>

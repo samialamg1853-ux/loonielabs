@@ -5,8 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import CryptoExplorer from "./pages/CryptoExplorer";
-import TaxCalculator from "./pages/TaxCalculator";
-import ETFComparison from "./pages/ETFComparison";
+import CryptoTax from "./pages/CryptoTax";
+import ETFCompare from "./pages/ETFCompare";
 import PortfolioOptimizer from "./pages/PortfolioOptimizer";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -23,8 +23,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/crypto" element={<CryptoExplorer />} />
-          <Route path="/tools/tax-calculator" element={<TaxCalculator />} />
-          <Route path="/tools/etf-vs-btc" element={<ETFComparison />} />
+          <Route path="/tools/crypto-tax" element={<CryptoTax />} />
+          <Route path="/tools/etf-compare" element={<ETFCompare />} />
           <Route path="/tools/portfolio-optimizer" element={<PortfolioOptimizer />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />

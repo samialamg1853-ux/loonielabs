@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="md:col-span-2 space-y-6">
             <Logo />
             <p className="text-muted-foreground max-w-xs">
-              Modern task management for teams that value clarity, focus, and results.
+              Informational only; not investment or tax advice. Unaffiliated with Wealthsimple or any broker.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="h-10 w-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors">
@@ -41,35 +41,33 @@ const Footer = () => {
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-medium text-lg text-foreground">Product</h4>
+            <h4 className="font-medium text-lg text-foreground">Tools</h4>
             <ul className="space-y-3">
-              <li><Link to="/#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Integrations</a></li>
-              <li><Link to="/#pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</Link></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Updates</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Roadmap</a></li>
+              <li><Link to="/tools/crypto-tax" className="text-muted-foreground hover:text-foreground transition-colors">Crypto Tax Calculator</Link></li>
+              <li><Link to="/tools/etf-compare" className="text-muted-foreground hover:text-foreground transition-colors">ETF Comparison</Link></li>
+              <li><Link to="/tools/fx-fee-checker" className="text-muted-foreground hover:text-foreground transition-colors">FX Fee Checker</Link></li>
+              <li><Link to="/tools/acb-helper" className="text-muted-foreground hover:text-foreground transition-colors">ACB Helper</Link></li>
             </ul>
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-medium text-lg text-foreground">Company</h4>
+            <h4 className="font-medium text-lg text-foreground">Guides</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">About</a></li>
-              <li><Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Careers</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Press</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a></li>
+              <li><Link to="/guides/crypto-tax-canada" className="text-muted-foreground hover:text-foreground transition-colors">Crypto Tax Canada</Link></li>
+              <li><Link to="/guides/tfsa-vs-rrsp-crypto-etfs" className="text-muted-foreground hover:text-foreground transition-colors">TFSA vs RRSP</Link></li>
+              <li><Link to="/guides/superficial-loss-30-day" className="text-muted-foreground hover:text-foreground transition-colors">Superficial Loss</Link></li>
+              <li><Link to="/guides/wealthsimple-crypto-fees" className="text-muted-foreground hover:text-foreground transition-colors">WealthSimple Fees</Link></li>
+              <li><Link to="/guides/norberts-gambit" className="text-muted-foreground hover:text-foreground transition-colors">Norbert's Gambit</Link></li>
             </ul>
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-medium text-lg text-foreground">Resources</h4>
+            <h4 className="font-medium text-lg text-foreground">Legal</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Help Center</a></li>
-              <li><Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Guides & Tutorials</Link></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">API Reference</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Community</a></li>
+              <li><Link to="/about/methodology" className="text-muted-foreground hover:text-foreground transition-colors">Methodology</Link></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">Disclaimer</a></li>
             </ul>
           </div>
         </div>
@@ -77,9 +75,9 @@ const Footer = () => {
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center text-muted-foreground text-sm">
           <div>© 2025 MapleMint. All rights reserved.</div>
           <div className="flex gap-6 mt-4 md:mt-0">
+            <Link to="/about/methodology" className="hover:text-foreground transition-colors">Sources</Link>
             <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
             <a href="#" className="hover:text-foreground transition-colors">Terms</a>
-            <a href="#" className="hover:text-foreground transition-colors">Cookies</a>
           </div>
         </div>
       </div>
